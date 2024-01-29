@@ -12,10 +12,10 @@ class Product extends Component {
             <>
             {/* {this.count!==0 ?(
             <> */}
-             <span className='m-2 text-info'>product name</span>
-                <span className='m-2 badge bg-primary'> {this.state.ProductName} </span>
-                    <button className='m-2 btn btn-sm btn-success'>+ </button>
-                    <button className='m-2 btn btn-sm btn-warning'>-</button>
+             <span className='m-2 text-info'>{this.state.ProductName}</span>
+                <span className='m-2 badge bg-primary'> {this.format()} </span>
+                    <button className='m-2 btn btn-sm btn-success' onClick={this.handleIncreamen}>+ </button>
+                    <button className='m-2 btn btn-sm btn-warning' onClick={this.handleDecrement}>-</button>
                     <button className='m-2 btn btn-sm btn-danger' >delete</button>
                     <ul>{mappedList}</ul>
             {/* </>):<h1>there is no Product </h1>} */}
@@ -31,6 +31,12 @@ class Product extends Component {
             return this.state.count;
         }
         
+    }
+    handleIncreamen=()=>{
+        this.setState({count:this.state.count+1})
+    }
+    handleDecrement=()=>{
+        this.setState({count:this.state.count-1})
     }
 }
  
